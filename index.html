@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="root">
+
+        <div class="headPage">
+
+            <div>
+                <h1>Mes tache to do list</h1>
+            </div>
+
+            <div class="saisiTache">
+                <input @keyup.enter="addList" type="text" name="" id="inputValue" placeholder="Entrer une tache">
+                <button @click="addList">Ajouter</button>
+            </div>
+        
+        </div>
+
+        <section class="list">
+
+                <div class="tableauTache">
+
+                    <div class="ajoutList">
+                        <h2>A faire </h2>
+                            <template v-for="(item,index) in afaire">
+                        <ul >
+                            <li>
+                            tache :{{item}} {{index}} <button @click="changeListEncours(index)">Changement</button>
+                            </li>
+                            <div >
+                            <i class="fa-solid fa-pen-to-square" @click="modifInput" >
+                            </i>
+                            <input @input="inputValue" type="text" name="" id="inputModif" v-if="inputModif==false"  
+                            >
+                            </div>
+                        </ul>
+                            </template>
+                    </div>
+
+                    <div class="ajoutList">
+                        <h2>En cours </h2>
+                       
+                            <ul  v-for="(item,index) in encoure">
+                                <li>{{item}} {{index}}<button @click="changeListTermine(index)">Changement</button>
+
+                                </li> 
+                                </ul> 
+                        
+                    </div>
+                    <div class="ajoutList">
+                        <h2>Terminer</h2>
+                        
+                            <ul v-for="(item,index) in terminer" >
+                                <li>{{item}} {{index}} <button @click="deletList(index)">Terminer</button>
+
+                                </li>
+                            </ul>
+                    
+                    </div>
+                </div>
+
+        </section>
+
+
+
+
+
+        
+
+    </div>
+
+
+    </div>
+
+
+    <script defer src="main/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+.headPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.headPage input {
+  padding-right: 100px;
+  margin-right: 20px;
+}
+.headPage button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.headPage button:hover {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+  border: 1px solid black;
+}
+
+i {
+  padding-left: 10px;
+}
+i:hover {
+  color: red;
+}
+
+.saisiTache {
+  height: 80px;
+}
+
+.ajoutList {
+  border: 1px solid black;
+  height: 600px;
+  width: 300px;
+}
+
+.tableauTache {
+  display: flex;
+  justify-content: center;
+}
+.tableauTache div {
+  margin: 20px;
+}
+.tableauTache h2 {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */
